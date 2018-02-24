@@ -1,0 +1,44 @@
+<section class="posters-container" ng-controller="MoviesController">
+    <section>
+        <div class="block-params">
+            <label>Year</label>
+            <select id="year" name="year" ng-model="vm.params.year" ng-change="vm.discoverMovies()">
+                    <option ng-repeat="n in vm.years" value="{{n}}">{{n}}</option>
+                  </select>
+        </div>
+        <div class="block-params">
+            <label>Order by</label>
+            <select id="sort_by" name="sort_by" ng-model="vm.params.sort_by" ng-change="vm.discoverMovies()">
+                    <option value="popularity.asc">Popularity - Ascendant</option>
+                    <option value="popularity.desc">Popularity - Descendant</option>
+                    <option value="release_date.asc">Release date - Ascendant</option>
+                    <option value="release_date.desc">Release date - Descendant</option>
+                    <option value="revenue.asc">Revenue - Ascendant</option>
+                    <option value="revenue.desc">Revenue - Descendant</option>
+                    <option value="primary_release_date.asc">Primary release date - Ascendant</option>
+                    <option value="primary_release_date.desc">Primary release date - Descendant</option>
+                    <option value="original_title.asc">Original title - Ascendant</option>
+                    <option value="original_title.desc">Original title - Descendant</option>
+                    <option value="vote_average.asc">Vote average - Ascendant</option>
+                    <option value="vote_average.desc">Vote average - Descendant</option>
+                    <option value="vote_count.asc">Vote count - Ascendant</option>
+                    <option value="vote_count.desc">Vote count - Descendant</option>
+                  </select>
+        </div>
+        <div class="block-params">
+            <label>Genres</label>
+            <select id="genre" name="genre" ng-model="vm.params.genre" ng-change="vm.discoverMovies()">
+                    <option ng-repeat="genre in vm.genres" value="{{genre.id}}">{{genre.name}}</option>
+                  </select>
+        </div>
+        <div class="block-params">
+            <label>Search...</label>
+            <input class="input-search" type="text" name="search" ng-model="vm.search"><button type="button" class="btn-search" ng-click="vm.searchMovie()" ng-disabled="!vm.search"></button>
+        </div>
+    </section>
+    <section>
+        <div ng-repeat="movie in vm.movies" class="poster-lists">
+            <img src="{{vm.imgConf.base_url + '/' + vm.imgConf.poster_sizes[2] + '/' + movie.poster_path}}" alt="{{movie.title}}" />
+        </div>
+    </section>
+</section>
