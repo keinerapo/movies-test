@@ -30,7 +30,9 @@
     </section>
     <section>
         <div ng-repeat="serie in vm.series" class="poster-lists">
-            <img src="{{vm.imgConf.base_url + '/' + vm.imgConf.poster_sizes[2] + '/' + serie.poster_path}}" alt="{{serie.title}}" />
+            <a ng-click="vm.openTrailer(serie)">
+                <img src="{{vm.imgConf.base_url + '/' + vm.imgConf.poster_sizes[2] + '/' + serie.poster_path}}" alt="{{serie.title}}" />
+            </a>
         </div>
     </section>
 </section>
