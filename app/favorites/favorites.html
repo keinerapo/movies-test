@@ -1,0 +1,13 @@
+<section class="main-section">
+    <div class="clear">&nbsp;</div>
+    <div class="clear">&nbsp;</div>
+
+    <section class="digital-section">
+        <div class="digital-content">
+            <div ng-repeat="item in vm.favs" class="poster-lists">
+                <serie serie="item" genres="vm.sGenres" ng-if="item.isSerie"></serie>
+                <movie movie="item" genres="vm.mGenres" ng-if="item.isMovie"></movie>
+            </div>
+        </div>
+    </section>
+</section>

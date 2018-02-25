@@ -140,7 +140,8 @@ h6 {
 .select-genre {
     height: 31px;
     width: 200px;
-    background: url(/img/expandmore.png) 169px 11px / 15px no-repeat;
+    background: url(/img/close.png) no-repeat scroll 13px center;
+    background-position-x: 180px;
     overflow: hidden;
     border-width: 1px;
     border-style: solid;
@@ -159,7 +160,8 @@ h6 {
 }
 
 .select-anio {
-    background: url(/img/expandmore.png) no-repeat 75px 11px;
+    background: url(/img/expandmore.png) no-repeat scroll 13px center;
+    background-position-x: 80px;
     background-size: 15px;
     height: 31px;
     overflow: hidden;
@@ -193,23 +195,28 @@ h6 {
     height: 204px;
 }
 
-.poster-lists>div {
+.poster-lists:hover h4{
+    color: #0abffe;
+}
+
+.poster-content {
     float: left;
     display: inline-block
 }
 
-.poster-lists>div>img {
+.poster-content img {
     height: 204px;
 }
 
 .info-content {
+    float: left;
     padding: 10px 10px 10px 20px;
     width: 276px;
 }
 
-.info-content>h4 {
+.info-content h4 {
     float: left;
-    width: 236px;
+    width: 246px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -219,24 +226,28 @@ h6 {
     float: right;
 }
 
-.info-item {}
+.info-item li:after{
+    content: " | ";
+    color: #3d484c;
+    margin: 0 5px;
+}
+
+.info-item li:last-child:after{
+    content: "";
+}
+
 
 .info-item>li {
-    float: left;
+    display: inline-block;
     height: 15px;
     vertical-align: middle;
     list-style: none;
-    margin-right: 7px;
     font-size: 13px;
     margin-top: 14px;
-    padding-right: 5px;
     color: #3d484c;
-    border-right: 1px solid #3d484c;
 }
 
 .info-item>li:last-child {
-    border-right: 0 none;
-    width: 90px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -288,5 +299,4 @@ h6 {
     color: #0abffe;
     background: url(/img/favorite-hover.png) 110px 3px / 15px no-repeat;
 }
-
 

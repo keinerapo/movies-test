@@ -1,0 +1,19 @@
+<div class="poster-content">
+    <img ng-src="{{vm.imgConf.base_url + '/' + vm.imgConf.poster_sizes[1] + '/' + vm.movie.poster_path}}" alt="{{vm.movie.title}}" />
+</div>
+<div class="info-content">
+    <h4>{{vm.movie.title}}
+    </h4>
+    <span class="rating">{{vm.movie.vote_average}}</span>
+    <ul class="info-item">
+        <li ng-repeat="genre in vm.genres" ng-hide="genre.id !== vm.movie.genre_ids[0]">{{genre.name}}</li>
+        <li>{{vm.movie.release_date}}</li>
+        <li>{{vm.movie.original_language}}</li>
+    </ul>
+    <div class="clear">&nbsp;</div>
+    <p class="info-overview">{{vm.movie.overview}}</p>
+    <div class="buttons">
+        <button class="btn-show-triler" ng-click="vm.openTrailer(vm.movie)">Show Trailer</button>
+        <button class="btn-add-favorites" ng-click="vm.addFavorites(vm.movie)">Add favorites</button>
+    </div>
+</div>

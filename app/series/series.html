@@ -2,7 +2,7 @@
     <form ng-submit="vm.searchSerie()">
         <div class="search-input">
             <img src="/img/search.png">
-            <input class="input-search" type="text" name="search" ng-model="vm.search" placeholder="Search for a serie, series and videos">
+            <input class="input-search" type="text" name="search" ng-model="vm.search" placeholder="Search for a movie, series and videos">
         </div>
     </form>
 </section>
@@ -14,7 +14,7 @@
 
     <section class="filter-section">
         <div class="block-params">
-            <label>Year</label>
+            <label>Año</label>
             <div class="select-anio">
                 <select id="year" name="year" ng-model="vm.params.year" ng-change="vm.discoverSeries()">
                         <option ng-repeat="n in vm.years" value="{{n}}">{{n}}</option>
@@ -23,7 +23,7 @@
 
         </div>
         <div class="block-params">
-            <label>Genres</label>
+            <label>Género</label>
             <div class="select-genre">
                 <select id="genre" name="genre" ng-model="vm.params.genre" ng-change="vm.discoverSeries()">
                     <option ng-repeat="genre in vm.genres" value="{{genre.id}}">{{genre.name}}</option>
@@ -37,25 +37,7 @@
     <section class="digital-section">
         <div class="digital-content">
             <div ng-repeat="serie in vm.series" class="poster-lists">
-                <div>
-                    <img src="{{vm.imgConf.base_url + '/' + vm.imgConf.poster_sizes[1] + '/' + serie.poster_path}}" alt="{{serie.title}}" />
-                </div>
-                <div class="info-content">
-                    <h4>{{serie.original_name}}
-                    </h4>
-                    <span class="rating">{{serie.vote_average}}</span>
-                    <ul class="info-item">
-                        <li ng-repeat="genre in vm.genres" ng-hide="genre.id !== serie.genre_ids[0]">{{genre.name}}</li>
-                        <li>{{serie.original_language}}/{{serie.origin_country[0]}}</li>
-                        <li>{{serie.first_air_date}}</li>
-                    </ul>
-                    <div class="clear">&nbsp;</div>
-                    <p class="info-overview">{{serie.overview}}</p>
-                    <div class="buttons">
-                        <button class="btn-show-triler"  ng-click="vm.openTrailer(serie)">Show Trailer</button>
-                        <button class="btn-add-favorites">Add favorites</button>
-                    </div>
-                </div>
+                <serie serie="serie" genres="vm.genres"></serie>
             </div>
         </div>
     </section>

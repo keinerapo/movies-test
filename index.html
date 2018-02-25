@@ -9,31 +9,37 @@
     <link href="css/style.css" rel="stylesheet" />
     <link href="bower_components/ng-dialog/css/ngDialog.min.css" rel="stylesheet" />
     <link href="bower_components/ng-dialog/css/ngDialog-theme-default.min.css" rel="stylesheet" />
-    <link href="css/tabs-styles.css" rel="stylesheet" />
-    
-    
+
+
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="node_modules/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
     <script src="bower_components/ng-dialog/js/ngDialog.min.js"></script>
-    
-    
+
+    <!--App Module-->
     <script src="app/app.module.js"></script>
     <script src="app/app.config.routes.js"></script>
     <script src="app/constants.js"></script>
-    
-    
-    <!-- MOVIES-->
     <script src="app/app.services.js"></script>
     <script src="app/app.controller.js"></script>
-    <script src="app/components/navbar/navbar.component.js"></script>
+    <!--Navbar-->
+    <script src="app/navbar/navbar.component.js"></script>
+    <!--Movies-->
     <script src="app/movies/movies.services.js"></script>
     <script src="app/movies/movies.controller.js"></script>
+    <script src="app/movies/movie/movie.component.js"></script>
+    <script src="app/movies/movie/movie.component.controller.js"></script>
+    <!--Series-->
     <script src="app/series/series.services.js"></script>
     <script src="app/series/series.controller.js"></script>
+    <script src="app/series/serie/serie.component.controller.js"></script>
+    <script src="app/series/serie/serie.component.js"></script>
+    <!--Favs-->
+    <script src="app/favorites/favorites.controller.js"></script>
+
 </head>
-<body np-app>
+
+<body>
     <div class="container">
-        
         <ui-view></ui-view>
     </div>
 </body>
